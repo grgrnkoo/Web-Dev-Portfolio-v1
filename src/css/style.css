@@ -1,0 +1,551 @@
+@import url('./expose.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #E9E9E9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(195,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23D700E7'/%3E%3Cstop offset='1' stop-color='%23D09005'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(153,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23DD00DD'/%3E%3Cstop offset='1' stop-color='%2354004D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='10.23'%3E%3Cpath transform='translate(-4.2 -2.4) rotate(-2.4 1409 581) scale(0.982)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='3.4100000000000006' transform='translate(-15 6) rotate(-1.2 800 450) scale(0.997)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(-4.2 9) rotate(-15 401 736) scale(0.997)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='3.1'%3E%3Cpath transform='translate(36 3.6) rotate(-0.9 150 345) scale(1.006)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='6.820000000000001' transform='translate(9 -18) rotate(-21.6 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-2.4 -2.4) rotate(-3.6 1400 132) scale(0.97)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Expose-Regular;
+    font-size: 18px;
+}
+
+img, video {
+    overflow: hidden;
+}
+
+header {
+    z-index: 1;
+    position: fixed;
+    right: 2rem;
+    top: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    max-width: 70vw;
+    width: fit-content;
+    min-width: 20vw;
+    background-color: hsla(0, 100%, 100%, 90%);
+    margin: 1rem 1rem auto auto;
+    border-radius: 10rem;
+    opacity: 0;
+    animation: 1s appear linear 2s forwards;
+}
+
+header .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-right: 2rem;
+}
+
+.logo > img {
+    position: relative;
+    left: 7px;
+    transform: rotateZ(-10deg);
+    max-height: 50px;
+    display: inline-block;
+    filter: invert(65%) sepia(36%) saturate(7053%) hue-rotate(284deg) brightness(103%) contrast(106%) drop-shadow(0px 0px 5px hsl(309, 100%, 67%));
+    animation: shake 5s linear 3s infinite;
+}
+
+@keyframes shake {
+    3% {
+        transform: rotateZ(-15deg);
+    }
+    6% {
+        transform: rotateZ(-10deg);
+    }
+    10% {
+        transform: rotateZ(3deg);
+    }
+    16% {
+        transform: rotateZ(-10deg);
+    }
+    100% {
+        transform: rotateZ(-10deg);
+    }
+}
+
+@keyframes slidepink {
+    0% {
+        transform: translateY(-100%);
+    }
+    75% {
+        transform: translateY(2%);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes slidewhite {
+    0% {
+        transform: translateX(100%);
+    }
+    75% {
+        transform: translateX(-2%);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.logo > h1, h3 {
+    position: relative;
+    top: .25rem;
+    display: inline-block;
+    align-self: center;
+    text-transform: uppercase;
+    font-family: "Teko", sans-serif;
+    font-size: 3em;
+    font-weight: 500;
+    letter-spacing: -2px;
+    z-index: 2;
+}
+
+nav {
+    display: none;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-family: Expose-Regular;
+    padding: 0 2rem;
+}
+
+li > a {
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
+    padding: 0 1rem;
+}
+
+li > a:hover {
+    color: hsl(309, 100%, 67%);
+}
+
+.nav-sign {
+    aspect-ratio: 1 / 1;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-sign:hover {
+    cursor: pointer;
+}
+
+.stripe {
+    height: 2px;
+    background-color: hsl(0, 0%, 0%);
+    width: 100%;
+}
+
+#introduction {
+    display: flex;
+    position: relative;
+    bottom: 6rem;
+}
+
+.pinkfield {
+    width: calc(2rem + 20vw);
+    height: calc(100vh + 4rem);
+    background: linear-gradient(hsl(309, 100%, 67%), hsl(310, 49%, 15%));    
+    border-bottom-right-radius: 5rem;
+    box-shadow: inset 0px 0px 5px 2px hsla(0, 100%, 100%, 40%);
+    animation: 1s slidepink ease-in forwards;
+    transform: translateY(-100%);
+}
+
+.grayfield {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.grayfield > img {
+    position: relative;
+    min-width: 20vw;
+    width: 25rem;
+    filter: grayscale(70%);
+    border-radius: 30%;
+    overflow: hidden;
+    transform: translateX(-50%);
+    transition: transform .5s;
+    opacity: 0;
+    animation: 1s appear linear 2s forwards;
+}
+
+.grayfield > img:hover {
+    filter: none;
+    transform: scale(110%) translateX(-45%);
+}
+
+.whitebox {
+    background-color: hsla(0, 100%, 100%, 80%);
+    position: relative;
+    margin-top: 5rem;
+    /* box-shadow: inset 0px 0px 3px 1px hsla(0, 0%, 0%, 100%); */
+    box-shadow: inset 0px 0px 5px 2px hsl(0, 100%, 100%);
+    width: fit-content;
+    color: hsla(0, 0%, 0%, 80%);
+    transform: translateX(100%);
+    animation: 1.2s slidewhite ease-in forwards .5s;
+}
+
+.right {
+    right: 0;
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+}
+
+.left {
+    left: 0;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+}
+
+.text {
+    max-width: 35vw;
+    display: block;
+    margin: 3rem 10rem 3rem 5rem;
+    /* color: hsl(0, 100%, 100%); */
+    opacity: 0;
+    animation: 1s appear linear 2s forwards;
+}
+
+.text p {
+    margin: 1.2rem 0 1rem 0;
+}
+
+.skills {
+    display: flex;
+    align-items: center;
+}
+
+.skills img {
+    /* filter: invert(91%) sepia(100%) saturate(35%) hue-rotate(257deg) brightness(107%) contrast(100%); */
+    padding: 0 3px;
+}
+
+.skills img:hover {
+    filter: invert(65%) sepia(36%) saturate(7053%) hue-rotate(284deg) brightness(103%) contrast(106%) drop-shadow(0px 0px 5px hsl(309, 100%, 67%));
+}
+
+.text h2 {
+    font-family: Expose-Medium;
+    letter-spacing: .8px;
+}
+
+#html-icon, #react-icon {
+    height: 43px;
+}
+
+#js-icon, #wp-icon  {
+    height: 46px;
+}
+
+#arrow {
+    position: absolute;
+    top: calc(100vh - 2rem);
+    right: 2rem;
+    filter: invert(91%) sepia(100%) saturate(35%) hue-rotate(257deg) brightness(107%) contrast(100%);
+}
+
+#arrow:hover {
+    filter: invert(65%) sepia(36%) saturate(7053%) hue-rotate(284deg) brightness(103%) contrast(106%);
+}
+
+h3 {
+    font-size: 7rem;
+    margin-left: .3rem;
+    color: hsl(0, 100%, 100%);
+}
+
+.line {
+    height: 1px;
+    width: 100vw;
+    position: relative;
+    bottom: 3rem;
+    background-color: hsl(0, 100%, 100%);
+}
+
+.projects-grid {
+    margin: 0 auto;
+    display: grid;
+    grid: repeat(auto-fill, minmax(10px, 1fr)) / repeat(3, 1fr);
+    max-width: 1380px;
+    padding: 5rem 5rem;
+    grid-auto-rows: min-content;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem;
+    color: hsla(0, 0%, 0%, 80%);
+    /* border: 1px solid hsla(0, 0%, 0%, 50%); */
+}
+
+.project-card .description {
+    background: linear-gradient(hsla(0, 100%, 100%, 100%), hsla(0, 100%, 100%, 60%));
+    /* transform: scale(110%); */
+    /* position: relative;
+    bottom: 7px; */
+}
+
+.project-card h4 {
+    /* background-color: hsla(0, 100%, 100%, 60%); */
+    padding: .5rem 1rem;
+    padding-top: 1rem;
+    font-size: 1.2em;
+    /* text-transform: uppercase; */
+    letter-spacing: .6px;
+    font-family: Expose-Medium;
+    /* border-top: 1px solid hsla(0, 0%, 0%, 50%); */
+}
+
+.project-card p {
+    margin: .5rem 0 1.2rem 0;
+}
+
+.videobox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hover1, #hover2, #hover3 {
+    position: absolute;
+    background-color: hsla(0, 100%, 100%, 90%);
+    border: 1px solid hsla(0, 0%, 0%, 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    p {
+        padding: 0;
+        margin: .5rem;
+    }
+}
+
+.project-card .linkbar {
+    margin: 1.3rem 0 .5rem 0;
+    text-align: center;
+}
+
+.project-card .linkbar, .project-card .project-skills, .project-card  p {
+    padding: 0 1rem;
+}
+
+.project-skills img {
+    margin: .2rem;
+    scale: 90%;
+}
+
+.htmlimage {
+    height: 41px;
+}
+
+.wpimage {
+    height: 43px;
+}
+
+.project-skills {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: .5rem;
+    padding-bottom: .7rem;
+}
+
+.linkbar button, input[type="submit"] {
+    width: 9rem;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 5px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-family: Expose-Regular;
+    margin: .3rem 1rem;
+    background: transparent;
+    border: 1px solid hsla(0, 0%, 0%, 80%);
+}
+
+.linkbar button:hover {
+    cursor: pointer;
+    border: 1px solid hsla(0, 0%, 0%, 40%);
+    color: hsla(0, 0%, 0%, 40%);
+    img {
+        display: flex;
+    };
+    span {
+        display: none;
+    }
+}
+
+button img {
+    position: relative;
+    left: 2px;
+    height: 1rem;
+    padding-right: .3rem;
+    display: none;
+    margin: auto;
+}
+
+.github img {
+    height: 1.3rem;
+}
+
+.tall {
+    grid-row: span 3;
+}
+
+.medium-tall {
+    grid-row: span 2;
+}
+
+.project-card .preview {
+    width: 100%;
+}
+
+.horizontalblock {
+    width: 100%;
+    display: flex;
+    padding: 4rem 10rem 4rem 10rem;
+    color: hsla(0, 100%, 100%, 90%);
+    background-color: hsla(0, 0%, 0%, 70%);
+}
+
+#contact .line {
+    position: relative;
+    top: 0px;
+}
+
+#contact .heading {
+    position: relative;
+    top: 45px;
+} 
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input[type="submit"] {
+    width: 150px;
+    align-self: center;
+    margin: 1.5rem 0 0 0;
+    color: hsla(0, 100%, 100%, 90%);
+    border: 2px solid hsla(0, 100%, 100%, 90%);
+}
+
+input[type="submit"]:hover {
+    border: 2px solid hsla(0, 100%, 100%, 50%);
+    color: hsla(0, 100%, 100%, 50%);
+    cursor: pointer;
+}
+
+input, textarea {
+    padding: .7rem .7rem;
+    margin: .6rem 0;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+    /* padding-left: .5rem; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rights {
+    color: hsla(0, 100%, 100%, 90%);
+    font-size: .8em;
+    text-align: center;
+}
+
+.contactform {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(0, 100%, 100%, 20%);
+    border: 1px solid hsla(0, 100%, 100%, 90%);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-right: 10rem;
+}
+
+.socials {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.socialsinner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.socialsinner > p, .socialsinner a {
+    padding: .3rem 0;
+}
+
+.socials img {
+    height: 1em;
+    position: relative;
+    top: 2px;
+    padding-right: .2em;
+    filter: invert(100%) sepia(97%) saturate(13%) hue-rotate(207deg) brightness(104%) contrast(103%);
+}
+
+.socials a {
+    text-decoration: none;
+    color: hsla(0, 100%, 100%, 90%);
+}
+
+.socials a:hover {
+    filter: invert(65%) sepia(36%) saturate(7053%) hue-rotate(284deg) brightness(103%) contrast(106%);
+}
