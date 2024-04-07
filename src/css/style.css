@@ -411,6 +411,7 @@ h3 {
     margin: .3rem 1rem;
     background: transparent;
     border: 1px solid hsla(0, 0%, 0%, 80%);
+    color: hsla(0, 0%, 0%, 80%);
 }
 
 .linkbar button:hover {
