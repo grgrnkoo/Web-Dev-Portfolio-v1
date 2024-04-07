@@ -189,6 +189,8 @@ li > a:hover {
 }
 
 .grayfield {
+    position: relative;
+    top: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -196,8 +198,11 @@ li > a:hover {
 }
 
 .grayfield > img {
-    position: relative;
+    display: flex;
+    margin: auto 0;
     min-width: 35vw;
+    width: auto;
+    height: auto;
     aspect-ratio: 1/1.3;
     object-fit: cover;
     width: 25rem;
@@ -579,7 +584,7 @@ input::placeholder, textarea::placeholder {
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1100px) and (orientation: portrait) {
     .text {
         max-width: 100%;
         margin: 1rem 3rem;
@@ -609,17 +614,22 @@ input::placeholder, textarea::placeholder {
     }
 
     .grayfield {
+        position: relative;
+        top: 0;
         flex-direction: column;
         justify-content: center;
     }
 
     .grayfield > img {
+        display: flex;
+        flex-shrink: 1;
         /* position: relative; */
         transform: none;
         /* max-width: 25vw;
         top: .8rem; */
         margin: auto 0;
         max-width: 70vw;
+        padding-bottom: 5px;
     }
 
     .grayfield > img:hover {
@@ -658,7 +668,7 @@ input::placeholder, textarea::placeholder {
     }
 }
 
-@media only screen and (max-width: 985px) {
+@media only screen and (max-width: 985px) and (orientation: portrait) {
     body {
         font-size: 16px;
     }
@@ -682,7 +692,7 @@ input::placeholder, textarea::placeholder {
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) and (orientation: portrait) {
     header {
         position: relative;
         top: 0;
@@ -699,6 +709,7 @@ input::placeholder, textarea::placeholder {
     }
 
     .grayfield {
+        height: inherit;
         justify-content: flex-end;
     }
 
@@ -727,7 +738,7 @@ input::placeholder, textarea::placeholder {
         max-width: 585px;
     }
 
-    .project-card > img {
+    .project-card > img, .videobox img {
         max-height: 80vh;
         object-fit: cover;
         object-position: top;
@@ -736,7 +747,6 @@ input::placeholder, textarea::placeholder {
 
     .videobox img {
         display: flex;
-        object-fit: cover;
         width: 100%;
     }
 
@@ -752,17 +762,20 @@ input::placeholder, textarea::placeholder {
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 750px) and (orientation: portrait) {
     .grayfield {
         justify-content: flex-end;
     }
 
-    .grayfield > img {
-        max-width: 40vw;
+    .text {
+        font-size: .8rem;
+    }
+    .text h2 {
+        letter-spacing: .6px;
     }
 }
 
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 570px) and (orientation: portrait) {
     header {
         flex-direction: column;
         justify-content: center;
@@ -780,6 +793,10 @@ input::placeholder, textarea::placeholder {
 
     #introduction {
         height: calc(100vh - 7rem);
+    }
+
+    .grayfield {
+        height: inherit;
     }
 
     h3 {
@@ -800,10 +817,6 @@ input::placeholder, textarea::placeholder {
 
     .whitebox {
         width: 100vw;
-    }
-
-    .grayfield > img {
-        max-width: 45vw;
     }
 
     .projects-grid {
@@ -839,12 +852,12 @@ input::placeholder, textarea::placeholder {
         padding: 0 .5rem 0 .2rem;
     }
 
-    .project-card > img {
+    .project-card > img, .videobox img {
         max-height: 60vh;
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 450px) and (orientation: portrait) {
     .horizontalblock {
         padding: 20px 10px;
     }
@@ -864,5 +877,15 @@ input::placeholder, textarea::placeholder {
 
     .text {
         margin-bottom: 3rem;
+    }
+}
+
+@media (max-height: 700px) and (orientation: landscape) {
+    .text {
+        font-size: .8rem;
+    }
+
+    .grayfield > img {
+        max-width: 10vw;
     }
 }
