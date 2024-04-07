@@ -429,6 +429,10 @@ h3 {
     color: hsla(0, 0%, 0%, 80%);
 }
 
+.linkbar span {
+    color: hsla(0, 0%, 0%, 80%);
+}
+
 button img {
     position: relative;
     left: 2px;
