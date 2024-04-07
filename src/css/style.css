@@ -613,8 +613,10 @@ input::placeholder, textarea::placeholder {
     }
 
     .grayfield > img {
+        position: relative;
         transform: none;
         max-width: 25vw;
+        top: .8rem;
     }
 
     .grayfield > img:hover {
