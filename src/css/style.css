@@ -425,6 +425,10 @@ h3 {
     }
 }
 
+.linkbar a {
+    color: hsla(0, 0%, 0%, 80%);
+}
+
 button img {
     position: relative;
     left: 2px;
@@ -691,6 +695,7 @@ input::placeholder, textarea::placeholder {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         box-shadow: 0 -10px 25px hsla(0, 0%, 0%, 20%);
+        height: fit-content;
     }
 
     .text {
@@ -774,12 +779,11 @@ input::placeholder, textarea::placeholder {
     }
 
     .grayfield > img {
-        max-width: 55vw;
+        max-width: 45vw;
     }
 
     .projects-grid {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 10px;
     }
 
     .horizontalblock {
@@ -822,12 +826,12 @@ input::placeholder, textarea::placeholder {
 
 @media only screen and (max-width: 450px) {
     .horizontalblock {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 20px 10px;
     }
 
     h3 {
         font-size: 4rem;
+        margin-top: 2rem;
     }
 
     .line {
@@ -836,5 +840,9 @@ input::placeholder, textarea::placeholder {
 
     #contact .heading {
         top: calc(45px - 1.4rem);
+    }
+
+    .text {
+        margin-bottom: 3rem;
     }
 }
