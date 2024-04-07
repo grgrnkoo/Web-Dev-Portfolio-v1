@@ -352,6 +352,10 @@ h3 {
     align-items: center;
 }
 
+.videobox img {
+    display: none;
+}
+
 #hover1, #hover2, #hover3 {
     position: absolute;
     background-color: hsla(0, 100%, 100%, 90%);
@@ -411,7 +415,6 @@ h3 {
     margin: .3rem 1rem;
     background: transparent;
     border: 1px solid hsla(0, 0%, 0%, 80%);
-    color: hsla(0, 0%, 0%, 80%);
 }
 
 .linkbar button:hover {
@@ -430,7 +433,7 @@ h3 {
     color: hsla(0, 0%, 0%, 80%);
 }
 
-.linkbar span {
+a:visited, .linkbar a:visited {
     color: hsla(0, 0%, 0%, 80%);
 }
 
@@ -723,6 +726,16 @@ input::placeholder, textarea::placeholder {
         max-height: 80vh;
         object-fit: cover;
         object-position: top;
+    }
+
+    .videobox img {
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .videobox video {
+        display: none;
     }
 
     .tall, .medium-tall {
