@@ -433,7 +433,7 @@ h3 {
     color: hsla(0, 0%, 0%, 80%);
 }
 
-a:visited, .linkbar a:visited {
+a:visited, .linkbar a:visited, a:link, a:active, .linkbar a:link, .linkbar a:active, button span {
     color: hsla(0, 0%, 0%, 80%);
 }
 
