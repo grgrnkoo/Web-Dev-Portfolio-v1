@@ -1,5 +1,3 @@
-@import url('./expose.css');
-
 * {
     padding: 0;
     margin: 0;
@@ -18,7 +16,6 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(195,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23D700E7'/%3E%3Cstop offset='1' stop-color='%23D09005'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(153,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23DD00DD'/%3E%3Cstop offset='1' stop-color='%2354004D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='10.23'%3E%3Cpath transform='translate(-4.2 -2.4) rotate(-2.4 1409 581) scale(0.982)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='3.4100000000000006' transform='translate(-15 6) rotate(-1.2 800 450) scale(0.997)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(-4.2 9) rotate(-15 401 736) scale(0.997)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='3.1'%3E%3Cpath transform='translate(36 3.6) rotate(-0.9 150 345) scale(1.006)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='6.820000000000001' transform='translate(9 -18) rotate(-21.6 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-2.4 -2.4) rotate(-3.6 1400 132) scale(0.97)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-    font-family: Expose-Regular;
     font-size: 18px;
     min-width: 350px;
 }
@@ -123,7 +120,6 @@ header .logo {
     display: inline-block;
     align-self: center;
     text-transform: uppercase;
-    font-family: "Teko", sans-serif;
     font-size: 3em;
     font-weight: 500;
     letter-spacing: -2px;
@@ -138,11 +134,14 @@ header ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    font-family: Expose-Regular;
+    align-items: center;
     padding: 0 2rem;
 }
 
 li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: hsl(0, 0%, 0%);
     padding: 0 1rem;
@@ -150,6 +149,14 @@ li > a {
 
 li > a:hover {
     color: hsl(309, 100%, 67%);
+}
+
+li img {
+    width: 1.5rem;
+}
+
+li img:hover {
+    filter: grayscale(50%);
 }
 
 .nav-sign {
@@ -205,7 +212,7 @@ li > a:hover {
     height: auto;
     aspect-ratio: 1/1.3;
     object-fit: cover;
-    width: 25rem;
+    width: 20rem;
     filter: grayscale(70%);
     border-radius: 30%;
     overflow: hidden;
@@ -224,7 +231,6 @@ li > a:hover {
     background-color: hsla(0, 100%, 100%, 80%);
     position: relative;
     margin-top: 5rem;
-    /* box-shadow: inset 0px 0px 3px 1px hsla(0, 0%, 0%, 100%); */
     box-shadow: inset 0px 0px 5px 2px hsl(0, 100%, 100%);
     width: fit-content;
     color: hsla(0, 0%, 0%, 80%);
@@ -263,7 +269,6 @@ li > a:hover {
 }
 
 .skills img {
-    /* filter: invert(91%) sepia(100%) saturate(35%) hue-rotate(257deg) brightness(107%) contrast(100%); */
     padding: 0 3px;
 }
 
@@ -272,7 +277,6 @@ li > a:hover {
 }
 
 .text h2 {
-    font-family: Expose-Medium;
     letter-spacing: .8px;
 }
 
@@ -286,7 +290,7 @@ li > a:hover {
 
 #arrow {
     position: absolute;
-    top: calc(100vh - 2rem);
+    top: calc(100vh - 5rem);
     right: 2rem;
     filter: invert(91%) sepia(100%) saturate(35%) hue-rotate(257deg) brightness(107%) contrast(100%);
 }
@@ -326,25 +330,18 @@ h3 {
     overflow: hidden;
     margin: 1rem;
     color: hsla(0, 0%, 0%, 80%);
-    /* border: 1px solid hsla(0, 0%, 0%, 50%); */
 }
 
 .project-card .description {
     background: linear-gradient(hsla(0, 100%, 100%, 100%), hsla(0, 100%, 100%, 60%));
-    /* transform: scale(110%); */
-    /* position: relative;
-    bottom: 7px; */
 }
 
 .project-card h4 {
-    /* background-color: hsla(0, 100%, 100%, 60%); */
     padding: .5rem 1rem;
     padding-top: 1rem;
     font-size: 1.2em;
-    /* text-transform: uppercase; */
     letter-spacing: .6px;
-    font-family: Expose-Medium;
-    /* border-top: 1px solid hsla(0, 0%, 0%, 50%); */
+    margin-top: .5rem;
 }
 
 .project-card p {
@@ -361,7 +358,7 @@ h3 {
     display: none;
 }
 
-#hover1, #hover2, #hover3 {
+#hover1 {
     position: absolute;
     background-color: hsla(0, 100%, 100%, 90%);
     border: 1px solid hsla(0, 0%, 0%, 80%);
@@ -417,7 +414,6 @@ h3 {
     margin: 5px;
     border-radius: 20px;
     font-size: 1.1rem;
-    font-family: Expose-Regular;
     margin: .3rem 1rem;
     background: transparent;
     border: 1px solid hsla(0, 0%, 0%, 80%);
@@ -471,7 +467,7 @@ button img {
 .horizontalblock {
     width: 100%;
     display: flex;
-    padding: 7rem 10rem;
+    padding: 3rem 10rem;
     color: hsla(0, 100%, 100%, 90%);
     background-color: hsla(0, 0%, 0%, 70%);
 }
@@ -517,7 +513,6 @@ input, textarea {
 }
 
 input::placeholder, textarea::placeholder {
-    /* padding-left: .5rem; */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -538,11 +533,15 @@ input::placeholder, textarea::placeholder {
     margin-right: 10rem;
 }
 
+.contactform p {
+    padding-bottom: .5rem;
+}
+
 .socials {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-end;
 }
 
@@ -551,6 +550,7 @@ input::placeholder, textarea::placeholder {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding-bottom: 1rem;
 }
 
 .socialsinner > p, .socialsinner a {
@@ -592,6 +592,20 @@ input::placeholder, textarea::placeholder {
         height: fit-content;
     }
 
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        max-width: 70vw;
+        right: auto;
+        align-self: center;
+    }
+
+    header ul {
+        padding: 0;
+    }
+
     .skills {
         justify-content: center;
     }
@@ -623,10 +637,8 @@ input::placeholder, textarea::placeholder {
     .grayfield > img {
         display: flex;
         flex-shrink: 1;
-        /* position: relative; */
         transform: none;
-        /* max-width: 25vw;
-        top: .8rem; */
+        max-width: 70vw;
         margin: auto 0;
         max-width: 70vw;
         padding-bottom: 5px;
@@ -668,30 +680,6 @@ input::placeholder, textarea::placeholder {
     }
 }
 
-@media only screen and (max-width: 985px) and (orientation: portrait) {
-    body {
-        font-size: 16px;
-    }
-
-    nav {
-        display: flex;
-    }
-
-    .nav-sign {
-        display: none;
-    }
-
-    header {
-        max-width: 70vw;
-        right: auto;
-        align-self: center;
-    }
-
-    header ul {
-        padding: 0;
-    }
-}
-
 @media only screen and (max-width: 900px) and (orientation: portrait) {
     header {
         position: relative;
@@ -708,6 +696,14 @@ input::placeholder, textarea::placeholder {
         top: 0;
     }
 
+    nav {
+        display: flex;
+    }
+
+    .nav-sign {
+        display: none;
+    }
+
     .grayfield {
         height: inherit;
         justify-content: flex-end;
@@ -715,22 +711,12 @@ input::placeholder, textarea::placeholder {
 
     .whitebox {
         width: 80vw;
-        margin-bottom: 0;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        box-shadow: 0 -10px 25px hsla(0, 0%, 0%, 20%);
+        margin-bottom: 1rem;
         height: fit-content;
     }
 
     .text {
-        margin-top: 3rem;
-        margin-bottom: 8rem;
-    }
-
-    .newline {
-        position: absolute;
-        bottom: 0;
-        display: flex;
+        margin: 3rem;
     }
 
     .projects-grid {
@@ -739,7 +725,7 @@ input::placeholder, textarea::placeholder {
     }
 
     .project-card > img, .videobox img {
-        max-height: 80vh;
+        max-height: 60vh;
         object-fit: cover;
         object-position: top;
         margin: auto;
@@ -770,8 +756,43 @@ input::placeholder, textarea::placeholder {
     .text {
         font-size: .8rem;
     }
-    .text h2 {
-        letter-spacing: .6px;
+    .text h2, h4 {
+        letter-spacing: .4px;
+        margin-bottom: .5rem;
+    }
+
+    .whitebox {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .horizontalblock {
+        padding: calc(1rem + 10px) 5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactform > p {
+        display: none;
+    }
+
+    .socials {
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .socialsinner {
+        flex-direction: row;
+        width: fit-content;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 1rem 0;
+    }
+
+    .socials a {
+        padding: 0 .5rem 0 .2rem;
     }
 }
 
@@ -811,12 +832,9 @@ input::placeholder, textarea::placeholder {
         top: calc(45px - 1rem);
     }
 
-    .newline {
-        display: none;
-    }
-
     .whitebox {
-        width: 100vw;
+        width: calc(100vw - 2rem - 20px);
+        padding: 1rem;
     }
 
     .projects-grid {
@@ -824,44 +842,11 @@ input::placeholder, textarea::placeholder {
     }
 
     .horizontalblock {
-        padding-top: 5rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .contactform > p {
-        display: none;
-    }
-
-    .socials {
-        width: fit-content;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .socialsinner {
-        flex-direction: row;
-        width: fit-content;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 1rem 0;
-    }
-
-    .socials a {
-        padding: 0 .5rem 0 .2rem;
-    }
-
-    .project-card > img, .videobox img {
-        max-height: 60vh;
+        padding: calc(1rem + 10px);
     }
 }
 
 @media only screen and (max-width: 450px) and (orientation: portrait) {
-    .horizontalblock {
-        padding: 20px 10px;
-    }
-
     h3 {
         font-size: 4rem;
         margin-top: 2rem;
@@ -873,10 +858,6 @@ input::placeholder, textarea::placeholder {
 
     #contact .heading {
         top: calc(45px - 1.4rem);
-    }
-
-    .text {
-        margin-bottom: 3rem;
     }
 }
 

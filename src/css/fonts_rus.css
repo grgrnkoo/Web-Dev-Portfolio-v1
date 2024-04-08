@@ -1,0 +1,40 @@
+.logo > h1 {
+    font-family: "Teko", sans-serif;
+}
+
+p {
+    line-height: 1.2;
+}
+
+h3 {
+    font-family: "Alumni Sans", sans-serif;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+button span {
+    font-size: 18px;
+}
+
+body, header ul, .linkbar button, input[type="submit"] {
+    font-size: 20px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-weight: 400;
+}
+
+.text h2, .project-card h4 {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1100px) and (orientation: portrait) {
+    h2 {
+        margin-top: .5rem;
+    }
+}
+
+@media only screen and (max-width: 900px) and (orientation: portrait) {
+    .text {
+        margin: 1.5rem;
+    }
+}
