@@ -1,0 +1,13 @@
+@import url('./expose.css');
+
+.logo > h1, h3 {
+    font-family: "Teko", sans-serif;
+}
+
+body, header ul, .linkbar button, input[type="submit"] {
+    font-family: Expose-Regular, sans-serif;
+}
+
+.text h2, .project-card h4 {
+    font-family: Expose-Medium, sans-serif;
+}
